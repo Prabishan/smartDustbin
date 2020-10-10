@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--<link rel="icon" href="static/assets/img/brand/favicon.png" type="image/png">-->
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
+    <!-- Icons -->
+    <link rel="stylesheet" href="static/assets/vendor/nucleo/css/nucleo.css" type="text/css">
+    <link rel="stylesheet" href="static/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" type="text/css">
+    <!-- Argon CSS -->
+    <link rel="stylesheet" href="static/assets/css/argon.css?v=1.2.0" type="text/css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row content">
+            <div class ="col-sm-3">
+                <h4>Smart Dustbin</h4>
+            </div>
+             
+            <div class="col-sm-9">
+                <h1>DASHBOARD</h1>
+                <br>
+                <br>
+                <br>
+                <!--<div style="width: 18rem;">-->
+                    
+                    <div class="row">
+                        <div class="col-xl-3 col-md-6">
+                            <div class="card card-stats mb-4 mb-lg-0">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col">
+                                            <h5 class="card-title text-uppercase text-muted mb-0">Total Recyclables Collected</h5>
+                                            <span class="h2 font-weight-bold mb-0">{{trc}}</span>
+                                        </div>
+                                        <div class="col-auto">
+                                        <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
+                                            <i class="fas fa-chart-bar"></i>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    <p class="mt-3 mb-0 text-muted text-sm">
+                                        <span class="text-success mr-2"><i class=""></i> </span>
+                                        <span class="text-nowrap"></span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6">
+                            <div class="card card-stats mb-4 mb-lg-0">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col">
+                                            <h5 class="card-title text-uppercase text-muted mb-0">Recent Recyclables Collected</h5>
+                                            <span class="h2 font-weight-bold mb-0">{{rrc}}</span>
+                                        </div>
+                                        <div class="col-auto">
+                                        <div class="icon icon-shape bg-gradient-orange text-white rounded-circle shadow">
+                                            <i class="ni ni-chart-pie-35"></i>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    <p class="mt-3 mb-0 text-muted text-sm">
+                                        <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
+                                        <span class="text-nowrap">Since last time</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6">
+                            <div class="card card-stats mb-4 mb-lg-0">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col">
+                                            <h5 class="card-title text-uppercase text-muted mb-0">Total Recyclables Rewards</h5>
+                                            <span class="h2 font-weight-bold mb-0">1000</span>
+                                        </div>
+                                        <div class="col-auto">
+                                        <div class="icon icon-shape bg-gradient-green text-white rounded-circle shadow">
+                                            <i class="ni ni-money-coins"></i>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    <p class="mt-3 mb-0 text-muted text-sm">
+                                        <span class="text-success mr-2"><i class=""></i> </span>
+                                        <span class="text-nowrap"></span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!--</div>-->
+                    <br>
+                    <br>
+    
+                
+            
+            <h3>History</h3>
+            <div class="table-responsive">
+                <div>
+                <table class="table align-items-center">
+                    <thead class="thead-light">
+                        <tr>
+                            <th scope="col">
+                                Date
+                            </th>
+                            <th scope="col">
+                                Waste(in grams)
+                            </th>
+                            <th scope="col">
+                                Status
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="list"> 
+                        {% for i in array1%}
+                        <tr>
+                            <th scope="row" class="name">
+                                <div class="media align-items-center">
+                                    <div class="media-body">
+                                        <span class="mb-0 text-sm">{{i}}</span>
+                                    </div>
+                                </div>
+                            </th>
+                            <td class="budget">
+                                {{array1[i]}}
+                            </td>
+                            <td class="status">
+                                <span class="badge badge-dot mr-4">
+                                  <i class="bg-warning"></i> pending
+                                </span>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            </div>
+        </div>
+        </div>
+        </div>
+    </div>
+    <footer class="container-fluid">
+        <p>@team9</p>
+    </footer>
+
+    <script src="static/assets/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="static/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="static/assets/vendor/js-cookie/js.cookie.js"></script>
+    <script src="static/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
+    <script src="static/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
+    <script src="static/assets/js/argon.js?v=1.2.0"></script>
+    <script src="static/assets/vendor/chart.js/dist/Chart.min.js"></script>
+    <script src="static/assets/vendor/chart.js/dist/Chart.extension.js"></script>
+
+</body>
+</html>
